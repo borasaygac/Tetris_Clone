@@ -1,7 +1,23 @@
 #ifndef PIECES_HPP
 #define PIECES_HPP
 
-char pieces[7][4][5][5] = // [7 pieces][4 rotations][5 height][5 width] || 2 in
+//----------------------------------------------------------------------//
+// Pieces
+//----------------------------------------------------------------------//
+
+class pieces
+{
+public:
+    int getBlockType(int piece, int rotation, int x, int y) { return pieceDB[piece][rotation][x][y]; } ;
+    int getXInitialPosition(int piece, int rotation) { return pieceInitPos[piece][rotation][0]; };
+    int getYInitialPosition(int piece, int rotation) { return pieceInitPos[piece][rotation][1]; };
+};
+
+// 5x5 grid for each piece
+
+// 0 = empty, 1 = filled, 2 = turning point
+
+char pieceDB[7][4][5][5] = // [7 pieces][4 rotations][5 height][5 width] || 2 in
                           // the field is turning point
     {
         // Square
@@ -220,6 +236,60 @@ char pieces[7][4][5][5] = // [7 pieces][4 rotations][5 height][5 width] || 2 in
                 {0, 0, 0, 0, 0},
                 {0, 0, 0, 0, 0}
             }
+        }
+    };
+
+
+int pieceInitPos [7][4][2] = 
+    {
+        // Square
+        {
+            {-2, -3},
+            {-2, -3},
+            {-2, -3},
+            {-2, -3}
+        },
+        // Line
+        {
+            {-2, -2},
+            {-2, -3},
+            {-2, -2},
+            {-2, -3},
+        },
+        // L
+        {
+            {-2, -3},
+            {-2, -3},
+            {-2, -3},
+            {-2, -2}
+        },
+        // L-mirror
+        {
+            {-2, -3},
+            {-2, -2},
+            {-2, -3},
+            {-2, -3}
+        },
+        // N
+        {
+            {-2, -3},
+            {-2, -3},
+            {-2, -3},
+            {-2, -2}
+        },
+        // N-mirror
+        {
+            {-2, -3},
+            {-2, -3},
+            {-2, -3},
+            {-2, -2}
+        },
+        // T
+        {
+            {-2, -3},
+            {-2, -3},
+            {-2, -3},
+            {-2, -2}
         }
     };
 
