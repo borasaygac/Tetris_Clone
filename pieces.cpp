@@ -279,3 +279,7 @@ int pieceInitPos [7][4][2] =
             {-2, -2}
         }
     };
+
+    int Pieces::getBlockType(int piece, int rotation, int x, int y) { return pieceDB[piece][rotation][x][y]; } ;
+    int Pieces::getXInitialPosition(int piece, int rotation) { return pieceInitPos[piece][rotation][0]; };
+    int Pieces::getYInitialPosition(int piece, int rotation) { return pieceInitPos[piece][rotation][1]; };
