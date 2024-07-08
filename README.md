@@ -1,2 +1,2 @@
 # Tetris_Clone
-This is my version of the game Tetris
+This is my ongoing version of the game Tetris
